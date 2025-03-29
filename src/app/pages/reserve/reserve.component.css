@@ -1,0 +1,48 @@
+.reserve {
+  background-image: url('/assets/background-reserve.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #f5e1c8;
+
+  .reserve-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 28%;
+
+    h1 {
+      font-family: var(--fonte-principal);
+      font-weight: 400;
+      font-size: 34px;
+      padding-bottom: 32px;
+    }
+
+    h4 {
+      font-family: var(--fonte-secundaria);
+      font-weight: 400;
+      font-size: 14px;
+      padding-bottom: 32px;
+    }
+
+    .reserve-content {
+      display: flex;
+      justify-content: space-evenly;
+      border: 1px solid var(--cor-secundaria);
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+      }
+
+      img {
+        padding: 20px 72px;
+      }
+    }
+  }
+}

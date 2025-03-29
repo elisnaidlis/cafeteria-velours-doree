@@ -1,0 +1,51 @@
+.home {
+  background-image: url('/assets/background-home.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #f5e1c8;
+
+  .home-content {
+    position: absolute;
+    top: 28%;
+    margin: 0 240px;
+
+    h1 {
+      font-family: var(--fonte-principal);
+      font-weight: 400;
+      font-size: 72px;
+      padding-bottom: 32px;
+    }
+
+    p {
+      font-family: var(--fonte-secundaria);
+      font-weight: 400;
+      font-size: 20px;
+      text-align: justify;
+      padding: 0 60px 32px 0;
+      color: var(--cor-primaria);
+    }
+
+    h4 {
+      font-family: var(--fonte-secundaria);
+      font-weight: 400;
+      font-size: 16px;
+      text-align: justify;
+      padding-bottom: 40px;
+      color: var(--cor-secundaria);
+    }
+
+    button {
+      mix-blend-mode: difference;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 40px 16px 0 0;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

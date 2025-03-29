@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Milonga&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+
+  /* Paleta de Cores */
+  --cor-primaria: #EADBC8; /* Bege clássico */
+  --cor-secundaria: #C9A74D; /* Dourado vintage */
+  --cor-marron-claro: #e9cfae ; /* Dourado vintage */
+  --cor-marron: #92816e; /* Marrom sofisticado */
+  --cor-marron-escuro: #281707; /* Marrom sofisticado */
+
+  /* Tipografia */
+  --fonte-principal: "Milonga", serif;
+  --fonte-secundaria: "Roboto", sans-serif;
+}
+
+/* @media (max-width: 1024px) {
+  body {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  li a {
+    font-size: 50%;
+    color: #281707;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+  }
+}
+ */

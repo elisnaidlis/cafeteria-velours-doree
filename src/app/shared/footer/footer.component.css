@@ -1,0 +1,12 @@
+footer {
+  background: var(--cor-marron-escuro);
+  color: var(--cor-marron);
+  text-align: center;
+  padding: 4px 0;
+  font-family: var(--fonte-secundaria);
+  font-weight: 400;
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  width: 100%
+}

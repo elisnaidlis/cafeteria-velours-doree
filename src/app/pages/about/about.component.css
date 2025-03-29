@@ -1,0 +1,27 @@
+.about {
+  background-image: url('/assets/background-about.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-family: var(--fonte-secundaria);
+    font-size: 20px;
+    text-align: center;
+    color: var(--cor-primaria);
+    margin: 0 240px;
+  }
+
+  h4 {
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    color: var(--cor-secundaria);
+    margin: 8% 32% 0;
+  }
+}
