@@ -12,16 +12,12 @@
   .container {
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 40%; */
     margin: 160px 240px 0;
     padding: 32px 0;
 
     .menu-title {
       font-family: var(--fonte-principal);
-      font-weight: 400;
+      font-weight: 300;
       font-size: 32px;
       padding-bottom: 8px;
     }

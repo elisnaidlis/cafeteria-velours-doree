@@ -26,17 +26,20 @@ header {
       text-decoration: none;
 
       &:hover {
+        font-size: 15px;
         color: var(--cor-secundaria);
         text-decoration: underline;
       }
 
-      &:active {
-        font-size: 16px;
+      .active-link {
+        font-size: 15px;
+        color: var(--cor-secundaria);
+        text-decoration: underline;
       }
+
     }
   }
 }
-
 
 
 

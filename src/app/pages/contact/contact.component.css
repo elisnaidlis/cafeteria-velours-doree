@@ -1,8 +1,10 @@
-.contact {
+.contact-section {
   background-image: url('/assets/background-contact.png');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  background-attachment: fixed;
+  overflow: hidden;
+  min-height: 100vh;
   color: #EADBC8;
 
   .contact-container {
@@ -39,8 +41,6 @@
         flex-direction: column;
         margin-bottom: 16px;
 
-
-
         label {
           font-family: var(--fonte-secundaria);
           font-size: 14px;
@@ -66,6 +66,10 @@
             border-radius: 4px;
           }
         }
+
+        .ng-invalid.ng-touched:not(form) {
+          border: 1px solid #e85f04;
+        }
       }
 
       .content {
@@ -81,12 +85,11 @@
         }
       }
 
-      #message {
+      textarea {
         background-color: transparent;
         padding: 8px;
         border: 1px solid #C9A74D;
         border-radius: 4px;
-        min-height: 148px;
         font-family: var(--fonte-secundaria);
         text-align: justify;
         color: var( --cor-marron-claro);
@@ -102,7 +105,11 @@
           outline: none;
           border: 3px double #d3b664;
           border-radius: 4px;
-          }
+        }
+
+        .ng-invalid.ng-touched:not(form) {
+          border: 1px solid #e85f04;
+        }
       }
 
       .button {
@@ -124,7 +131,7 @@
       }
     }
 
-    .data {
+    .data-protection {
       font-family: var(--fonte-secundaria);
       font-weight: 300;
       font-size: 10px;

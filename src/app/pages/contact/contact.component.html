@@ -1,40 +1,89 @@
-<section class="contact">
+<section class="contact-section">
   <div class="contact-container">
     <h2>Entre em Contato</h2>
     <p>Tem alguma dúvida ou sugestão? Fale conosco!</p>
 
-    <form>
+    <form #formContact="ngForm" (ngSubmit)="submitForm(formContact)" >
       <div class="form-group">
-        <label>Nome</label>
-        <input type="text" id="name" name="name" placeholder="*Seu nome" required/>
+        <label for="name">Nome</label>
+        <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="*Seu nome"
+        [(ngModel)]="form.name"
+        required #name="ngModel"/>
+
+        <!-- PAREI AQUI -->
+         <!--https://www.youtube.com/watch?v=dTL7SSoZ164&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=80  -->
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)">
+          Nome é obrigatório.
+        </div>
+
       </div>
 
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" id="email" name="email" placeholder="*Seu e-mail" required/>
+        <label for="email">Email</label>
+        <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="*Seu e-mail"
+        [(ngModel)]="form.email"
+        required/>
       </div>
 
       <div class="form-group content" >
         <div class="group">
-          <label>Telefone</label>
-          <input type="tel" id="phone" name="phone" placeholder="(xx) x xxxx-xxxx" required/>
+          <label for="phone">Telefone</label>
+          <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="(xx) x xxxx-xxxx"
+          [(ngModel)]="form.phone"
+          required/>
         </div>
+
         <div class="group">
-          <label>Assunto</label>
-          <input type="text" id="subject" name="subject" placeholder="Descreva o assunto" required/>
+          <label for="subject">Assunto</label>
+          <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Descreva o assunto"
+          [(ngModel)]="form.subject"
+          required/>
         </div>
       </div>
 
       <div class="form-group">
-        <label>Mensagem</label>
-        <textarea id="message" name="message" placeholder="Descreva sua mensagem" maxlength="400" required></textarea>
+        <label for="message">Mensagem</label>
+        <textarea
+        id="message"
+        name="message"
+        placeholder="Descreva sua mensagem"
+        maxlength="400"
+        [(ngModel)]="form.message"
+        rows="5"
+        required></textarea>
       </div>
 
       <div class="button">
-        <button type="submit">Enviar mensagem</button>
+        <button
+        type="submit">Enviar mensagem</button>
       </div>
     </form>
 
-    <p class="data">Ao preencher este formulário, concordo que os dados pessoais fornecidos acima serão utilizados para retorno de contato, envio de conteúdo informativo e publicitário sobre produtos, serviços e assuntos gerais, nos termos da Lei Geral de Proteção de Dados.</p>
+    <p class="data-protection">Ao preencher este formulário, concordo que os dados pessoais fornecidos acima serão utilizados para retorno de contato, envio de conteúdo informativo e publicitário sobre produtos, serviços e assuntos gerais, nos termos da Lei Geral de Proteção de Dados.</p>
   </div>
 </section>
+
+
+<!-- [(ngModel)]="form.name" -->
+<!-- [(ngModel)]="form.email" -->
+<!-- [(ngModel)]="form.phone" -->
+<!-- [(ngModel)]="form.subject" -->
+<!-- [(ngModel)]="form.message" -->
+<!-- [disabled]="formContact.invalid" -->
