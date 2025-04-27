@@ -2,9 +2,7 @@
   background-image: url('/assets/background-contact.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
   color: #EADBC8;
 
   .contact-container {
@@ -69,6 +67,14 @@
 
         .ng-invalid.ng-touched:not(form) {
           border: 1px solid #e85f04;
+        }
+
+        .alert {
+          font-family: var(--fonte-secundaria);
+          font-size: 11px;
+          font-weight: 300;
+          color: #e85f04;
+          padding: 8px 0;
         }
       }
 

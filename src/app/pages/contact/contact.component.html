@@ -3,87 +3,72 @@
     <h2>Entre em Contato</h2>
     <p>Tem alguma dúvida ou sugestão? Fale conosco!</p>
 
-    <form #formContact="ngForm" (ngSubmit)="submitForm(formContact)" >
-      <div class="form-group">
+    <form [formGroup]="formContact" (ngSubmit)="submitForm()">
+
+      <!-- Nome -->
+      <div class="form-group" [ngClass]="checkField('name')">
         <label for="name">Nome</label>
-        <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="*Seu nome"
-        [(ngModel)]="form.name"
-        required #name="ngModel"/>
-
-        <!-- PAREI AQUI -->
-         <!--https://www.youtube.com/watch?v=dTL7SSoZ164&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G&index=80  -->
-
-        <div *ngIf="name.invalid && (name.dirty || name.touched)">
-          Nome é obrigatório.
+        <input type="text" placeholder="*Seu nome" formControlName="name"/>
+        <div *ngIf="formContact.get('name')?.invalid && (formContact.get('name')?.dirty || formContact.get('name')?.touched)"
+          class="alert">
+          <span *ngIf="formContact.get('name')?.errors?.['required']">O nome é obrigatório.</span>
+          <span *ngIf="formContact.get('name')?.errors?.['minlength']">O nome deve ter pelo menos 3 caracteres.</span>
         </div>
-
       </div>
 
-      <div class="form-group">
+      <!-- E-mail -->
+      <div class="form-group" [ngClass]="checkField('email')">
         <label for="email">Email</label>
-        <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="*Seu e-mail"
-        [(ngModel)]="form.email"
-        required/>
+        <input type="email" placeholder="*Seu e-mail" formControlName="email" />
+        <div *ngIf="formContact.get('email')?.invalid && (formContact.get('email')?.dirty || formContact.get('email')?.touched)"
+          class="alert">
+          <span *ngIf="formContact.get('email')?.errors?.['required']">O e-mail é obrigatório.</span>
+          <span *ngIf="formContact.get('email')?.errors?.['email']">Insira um e-mail válido.</span>
+        </div>
       </div>
 
-      <div class="form-group content" >
-        <div class="group">
+      <!-- Telefone -->
+      <div class="form-group content">
+        <div class="group" [ngClass]="checkField('phone')">
           <label for="phone">Telefone</label>
-          <input
-          type="tel"
-          id="phone"
-          name="phone"
-          placeholder="(xx) x xxxx-xxxx"
-          [(ngModel)]="form.phone"
-          required/>
+          <input type="tel" placeholder="(xx) xxxxx-xxxx" formControlName="phone" />
+          <div *ngIf="formContact.get('phone')?.invalid && (formContact.get('phone')?.dirty || formContact.get('phone')?.touched)"
+            class="alert">
+            <span *ngIf="formContact.get('phone')?.errors?.['required']">O telefone é obrigatório.</span>
+            <span *ngIf="formContact.get('phone')?.errors?.['pattern']">O telefone deve estar no formato (00) 00000-0000.</span>
+          </div>
         </div>
 
-        <div class="group">
+        <!-- Assunto -->
+        <div class="group" [ngClass]="checkField('subject')">
           <label for="subject">Assunto</label>
-          <input
-          type="text"
-          id="subject"
-          name="subject"
-          placeholder="Descreva o assunto"
-          [(ngModel)]="form.subject"
-          required/>
+          <input type="text" placeholder="Descreva o assunto" formControlName="subject" />
+          <div *ngIf="formContact.get('subject')?.invalid && (formContact.get('subject')?.dirty || formContact.get('subject')?.touched)"
+            class="alert">
+            <span *ngIf="formContact.get('subject')?.errors?.['required']">O assunto é obrigatório.</span>
+          </div>
         </div>
       </div>
 
-      <div class="form-group">
+      <!-- Mensagem -->
+      <div class="form-group" [ngClass]="checkField('message')">
         <label for="message">Mensagem</label>
         <textarea
         id="message"
-        name="message"
         placeholder="Descreva sua mensagem"
-        maxlength="400"
-        [(ngModel)]="form.message"
-        rows="5"
-        required></textarea>
+        formControlName="message"></textarea>
+        <div *ngIf="formContact.get('message')?.invalid && (formContact.get('message')?.dirty || formContact.get('message')?.touched)" class="alert">
+          <span *ngIf="formContact.get('message')?.errors?.['required']">A mensagem é obrigatória.</span>
+          <span *ngIf="formContact.get('message')?.errors?.['minlength']">A mensagem deve ter pelo menos 10 caracteres.</span>
+        </div>
       </div>
 
+      <!-- Botão Enviar -->
       <div class="button">
-        <button
-        type="submit">Enviar mensagem</button>
-      </div>
+        <button type="submit" [disabled]="formContact.invalid">Enviar mensagem</button>
+        </div>
     </form>
 
     <p class="data-protection">Ao preencher este formulário, concordo que os dados pessoais fornecidos acima serão utilizados para retorno de contato, envio de conteúdo informativo e publicitário sobre produtos, serviços e assuntos gerais, nos termos da Lei Geral de Proteção de Dados.</p>
   </div>
 </section>
-
-
-<!-- [(ngModel)]="form.name" -->
-<!-- [(ngModel)]="form.email" -->
-<!-- [(ngModel)]="form.phone" -->
-<!-- [(ngModel)]="form.subject" -->
-<!-- [(ngModel)]="form.message" -->
-<!-- [disabled]="formContact.invalid" -->
